@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
+<<<<<<< HEAD
     'todo',
+=======
+>>>>>>> e4cba3333d2ef0f1fbebf8825b66ef7d4f458d49
     'tasks'
 ]
 

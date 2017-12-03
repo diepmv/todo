@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+=======
+from django.views.generic import TemplateView, RedirectView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse
+>>>>>>> e4cba3333d2ef0f1fbebf8825b66ef7d4f458d49
 from django.http.response import HttpResponseNotFound, HttpResponseRedirect
 from .models import Task
 from .forms import TaskForm

@@ -6,23 +6,33 @@ from django.db import models
 from django.conf import settings
 
 
+<<<<<<< HEAD
 class TaskManger(models.Manager):
     def get_queryset(self):
         queryset = super(TaskManger, self).get_queryset()
         return queryset.order_by('complete_time', 'due_date')
 
 
+=======
+>>>>>>> e4cba3333d2ef0f1fbebf8825b66ef7d4f458d49
 class Task(models.Model):
     """
     Task
 
+<<<<<<< HEAD
     The most important model for this application.
+=======
+    The most important object for this application.
+>>>>>>> e4cba3333d2ef0f1fbebf8825b66ef7d4f458d49
     Allows users to create and edit tasks that they
     need to complete. They can set names, descriptions,
     and due dates.
     """
+<<<<<<< HEAD
     objects = TaskManger()
 
+=======
+>>>>>>> e4cba3333d2ef0f1fbebf8825b66ef7d4f458d49
     owner = models.ForeignKey(settings.AUTH_USER_MODEL)
 
     title = models.CharField(max_length = 100, null = False)
@@ -46,23 +56,40 @@ class Task(models.Model):
         Checks if a task is due soon.
         :return: True if task is due within two days. Otherwise, False.
         """
+<<<<<<< HEAD
         # explicit __add__ used due to failing type checking in some IDEs
         min_due = timezone.now().__add__(timezone.timedelta(days = 2))
         return bool(
             self.due_date and self.due_date < min_due)
 
     def mark_complete(self, commit = True):
+=======
+        return bool(
+            self.complete_time < (timezone.now() - timezone.timedelta(days = 2)))
+
+    def mark_complete(self):
+>>>>>>> e4cba3333d2ef0f1fbebf8825b66ef7d4f458d49
         """
         Marks a task as complete by storing the current UTC time in complete_time
         """
         self.complete_time = timezone.now()
+<<<<<<< HEAD
         if commit:
             self.save()
 
     def mark_incomplete(self, commit = True):
+=======
+        self.save()
+
+    def mark_incomplete(self):
+>>>>>>> e4cba3333d2ef0f1fbebf8825b66ef7d4f458d49
         """
         Marks a task as incomplete by storing None in complete_time
         """
         self.complete_time = None
+<<<<<<< HEAD
         if commit:
             self.save()
+=======
+        self.save()
+>>>>>>> e4cba3333d2ef0f1fbebf8825b66ef7d4f458d49

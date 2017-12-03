@@ -26,4 +26,8 @@ class TaskOwnedByUserMixin(object):
             # Validate that user owns task or 404
             get_object_or_404(Task, pk = task_id, owner = request.user)
 
+<<<<<<< HEAD
         return super(TaskOwnedByUserMixin, self).post(request, *args, **kwargs)
+=======
+        return super(TaskOwnedByUserMixin, self).post(request, *args, **kwargs)
+>>>>>>> e4cba3333d2ef0f1fbebf8825b66ef7d4f458d49
